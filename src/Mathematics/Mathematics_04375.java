@@ -26,6 +26,5 @@ public class Mathematics_04375 {
 			}
 			System.out.println(cnt);
 		}
-		
 	}
 }

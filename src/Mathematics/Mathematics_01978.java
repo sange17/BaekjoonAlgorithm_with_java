@@ -14,9 +14,21 @@ public class Mathematics_01978 {
 		int count = 0;
 		
 		for(int i = 0; i < n; i++) {
-			if()
+			int idx = Integer.parseInt(array[i]);
+			boolean isPrime = true;
+			
+			if(idx==1) continue;
+
+			for(int j = 2; j <= Math.sqrt(idx); j++) {
+				if(idx % j == 0) {
+					isPrime = false;
+					break;
+				}
+			}
+			
+			if(isPrime) count++;
 		}
-		
+			
 		System.out.println(count);
 	}
 }

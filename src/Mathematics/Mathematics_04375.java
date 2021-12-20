@@ -9,12 +9,11 @@ import java.io.InputStreamReader;
 public class Mathematics_04375 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int n, len, cnt, tmp;
+		int n, cnt, tmp;
 		String str;
 		
 		while((str = br.readLine()) != null) {
 			tmp = 1;
-			len = 1;
 			cnt = 1;
 			n = Integer.parseInt(str);
 			

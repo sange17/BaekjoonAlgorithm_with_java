@@ -15,18 +15,22 @@ public class DataStructure_09093 {
 		
 		for(int i = 0; i < n; i++) {
 			char array[] = br.readLine().toCharArray();
+			char result[] = new char[array.length+1];
 			
-			for(int j = 0; j < array.length; j++) {
-//				System.out.println(array[j]);
-				if(array[j] == ' ' || array[j+1] == null) {
+			result[result.length - 1] = '#';
+			for(int h = 0; h < result.length - 1; h++) {
+				result[h] = array[h];
+			}
+			
+			for(int j = 0; j < result.length; j++) {
+				if(result[j] == ' ' || result[j] == '#') {
 					for(int k = top-1; k >= 0; k--) {
-						System.out.println(top);
 						top--;
 						sb.append(stack[k]);
 					}
 					sb.append(' ');
 				}else {
-					stack[top] = array[j];
+					stack[top] = result[j];
 					top++;
 				}
 			}

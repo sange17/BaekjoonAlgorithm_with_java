@@ -10,18 +10,28 @@ public class DataStructure_09093 {
 		StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(br.readLine());
-		String stack[] = new String[20];
+		char stack[] = new char[20];
 		int top = 0;
 		
 		for(int i = 0; i < n; i++) {
-			String array[] = br.readLine().split("");
-			for(int j = 0; j < 0; j++) {
-				if(array[j] == " ") {
-					sb.append(array[top]);
+			char array[] = br.readLine().toCharArray();
+			
+			for(int j = 0; j < array.length; j++) {
+//				System.out.println(array[j]);
+				if(array[j] == ' ' || array[j+1] == null) {
+					for(int k = top-1; k >= 0; k--) {
+						System.out.println(top);
+						top--;
+						sb.append(stack[k]);
+					}
+					sb.append(' ');
 				}else {
-					
+					stack[top] = array[j];
+					top++;
 				}
 			}
+			sb.append('\n');
 		}
+		System.out.print(sb);
 	}
 }

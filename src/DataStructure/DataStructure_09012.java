@@ -9,23 +9,28 @@ public class DataStructure_09012 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int n = Integer.parseInt(br.readLine());
-		int size = 0;
 		
 		for(int i = 0; i < n; i++) {
 			char array[] = br.readLine().toCharArray();
 			char stack[] = new char[array.length];
+			int size = 0;
 			
 			for(int j = 0; j < array.length; j++) {
-				if(array[j] == '(') {
+				if(stack[j] == '(') {
+					if(array[j+1] == ')') {
+						stack[j] = 0;
+						j++;
+						size--;					
+					}
+				}else {
 					stack[size] = array[j];
 					size++;
-				}else if(array[j] == ')') {
-					size--;
-					if(size < 0) break;
 				}
-				size = 0;
+				System.out.println(size);
 			}
-			
+			for(int j = 0; j < array.length; j++) {
+				System.out.println(stack[j]);
+			}
 			if(size == 0) {
 				System.out.println("YES");
 			}else {

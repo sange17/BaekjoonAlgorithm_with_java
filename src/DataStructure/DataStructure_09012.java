@@ -16,21 +16,25 @@ public class DataStructure_09012 {
 			int size = 0;
 			
 			for(int j = 0; j < array.length; j++) {
-				if(stack[j] == '(') {
-					if(array[j+1] == ')') {
-						stack[j] = 0;
-						j++;
-						size--;					
-					}
-				}else {
+				if(size == 0) {
 					stack[size] = array[j];
 					size++;
+				}else if(stack[size-1] == '(' && array[j] == ')'){
+					stack[size-1] = '0';
+//					System.out.println("여기1");
+					size--;
+				}else if(stack[size-1] == '('&& array[j] == '(') {
+					stack[size] = array[j];
+//					System.out.println("여기2");
+					size++;
+				}else if(stack[size-1] == ')') {
+					stack[size] = array[j];
+//					System.out.println("여기3");
+					size++;
 				}
-				System.out.println(size);
+//				System.out.println(size);
 			}
-			for(int j = 0; j < array.length; j++) {
-				System.out.println(stack[j]);
-			}
+			
 			if(size == 0) {
 				System.out.println("YES");
 			}else {

@@ -21,18 +21,14 @@ public class DataStructure_09012 {
 					size++;
 				}else if(stack[size-1] == '(' && array[j] == ')'){
 					stack[size-1] = '0';
-//					System.out.println("여기1");
 					size--;
 				}else if(stack[size-1] == '('&& array[j] == '(') {
 					stack[size] = array[j];
-//					System.out.println("여기2");
 					size++;
 				}else if(stack[size-1] == ')') {
 					stack[size] = array[j];
-//					System.out.println("여기3");
 					size++;
 				}
-//				System.out.println(size);
 			}
 			
 			if(size == 0) {

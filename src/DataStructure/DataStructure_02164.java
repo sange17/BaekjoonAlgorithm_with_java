@@ -9,16 +9,28 @@ public class DataStructure_02164 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int n = Integer.parseInt(br.readLine());
-		int array[] = new int[n];
-		int size = array.length;
+		int array[] = new int[500001];
+		int queSize = array.length;
+		int size = n;
+		int front = 0;
+		int rear = n;
 		
-		for(int i = n-1; i >= 0; i--) {
-			array[i] = i+1;
-			System.out.println(i+1);
+		for(int i = 1; i <= n; i++) {
+			array[i] = i;
 		}
-		
+				
 		for(int j = 0; j < n; j++) {
-			
+			if(size == 1) {
+				System.out.println(array[rear]);
+				break;
+			}else {
+				front = (front+1) % queSize;
+				array[front] = 0;
+				size--;
+				rear = (rear+1) % queSize;
+				array[rear] = array[front+1];
+				front = (front+1) % queSize;
+			}
 		}
 	}
 }

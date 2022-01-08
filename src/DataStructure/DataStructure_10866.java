@@ -9,7 +9,7 @@ public class DataStructure_10866 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int n = Integer.parseInt(br.readLine());
-		int deque[] = new int[n];
+		int deque[] = new int[n+1];
 		int front = 0;
 		int rear = 0;
 		int size = 0;
@@ -20,18 +20,18 @@ public class DataStructure_10866 {
 			switch(str[0]) {
 			case "push_front":
 				deque[front] = Integer.parseInt(str[1]);
-				front = (front-1+n) % n;
+				front = (front-1+deque.length)%deque.length;
 				size++;
 				break;
 			case "push_back":
-				rear++;
+				rear = (rear+1)%deque.length;
 				deque[rear] = Integer.parseInt(str[1]);
 				size++;
 				break;
 			case "pop_front":
 				if(size == 0) System.out.println(-1);
 				else {
-					front = (front+1+n) % n;
+					front = (front+1)%deque.length;
 					System.out.println(deque[front]);
 					deque[front] = 0;
 					size--;
@@ -42,6 +42,7 @@ public class DataStructure_10866 {
 				else {
 					System.out.println(deque[rear]);
 					deque[rear] = 0;
+					rear = (rear-1+deque.length)%deque.length;
 					size--;
 				}
 				break;
@@ -53,9 +54,8 @@ public class DataStructure_10866 {
 				else System.out.println(0);
 				break;
 			case "front":
-				front = (front+1+n) % n;
 				if(size == 0) System.out.println(-1);
-				else System.out.println(deque[front]);
+				else System.out.println(deque[(front+1)%deque.length]);
 				break;
 			case "back":
 				if(size == 0) System.out.println(-1);

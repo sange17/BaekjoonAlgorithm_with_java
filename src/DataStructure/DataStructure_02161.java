@@ -19,10 +19,10 @@ public class DataStructure_02161 {
 		for(int i = 1; i <= n; i++) {
 			array[i] = i;
 		}
-				
+
 		for(int j = 0; j < n; j++) {
 			if(size == 1) {
-				sb.append(array[front]);
+				sb.append(array[front+1]);
 				System.out.println(sb);
 				break;
 			}else {

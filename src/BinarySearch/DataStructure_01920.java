@@ -1,4 +1,4 @@
-package DataStructure;
+package BinarySearch;
 
 import java.io.IOException;
 import java.io.BufferedReader;

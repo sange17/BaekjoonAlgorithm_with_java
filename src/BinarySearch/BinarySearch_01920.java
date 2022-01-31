@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class DataStructure_01920 {
+public class BinarySearch_01920 {
 	public static int nArray[];
 	
 	public static void main(String[] args) throws IOException{

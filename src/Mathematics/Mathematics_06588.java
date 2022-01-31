@@ -10,15 +10,12 @@ public class Mathematics_06588 {
 		
 		while(true) {
 			int n = Integer.parseInt(br.readLine());
+			int array[] = new int[n];
 			
 			if(br.readLine() == "0") break;
 			
 			for(int i = 3; i < n; i++) {
 				boolean isPrime = true;
-				int a = 0;
-				int b = 0;
-				int sum = 0;
-				int array[] = new int[n/2];
 				
 				for(int j = 2; j <= Math.sqrt(i); j++) {
 					if(i % j == 0) {
@@ -32,8 +29,8 @@ public class Mathematics_06588 {
 				}
 			}
 			
-			for(int i = 0; i < n/2-1; i++) {
-				
+			for(int i = 0; i < n; i++) {
+				System.out.println(array[i]);
 			}
 		}
 	}

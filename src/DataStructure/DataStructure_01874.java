@@ -10,20 +10,28 @@ public class DataStructure_01874 {
 		StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(br.readLine());
-		int numArray[] = new int[n];
 		int stack[] = new int[n];
-		int size = 0;
+		int index = 0;
+		int start = 0;
 		
-		for(int i = 0; i < n; i++) {
-			numArray[i] = Integer.parseInt(br.readLine());
-			sb.append(numArray[i]).append("\n");
-		}
-		
-		for(int i = 0; i < n; i++) {
+		while(n --> 0) {
+			int value = Integer.parseInt(br.readLine());
 			
+			if(value > start) {
+				for(int j = start + 1; j <= value; j++) {
+					stack[index] = j;
+					index++;
+					sb.append("+").append("\n");
+				}
+				start = value;
+			}else if(stack[index - 1] != value) {
+				System.out.print("NO");
+				return;
+			}
+			
+			index--;
+			sb.append("-").append("\n");
 		}
-		
-		sb.setLength(sb.length()-1);
-		System.out.println(sb.reverse());
+		System.out.print(sb);
 	}
 }

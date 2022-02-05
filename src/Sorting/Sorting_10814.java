@@ -8,38 +8,29 @@ import java.util.StringTokenizer;
 public class Sorting_10814 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		StringTokenizer st;
 		
 		int n = Integer.parseInt(br.readLine());
-		int numArray[] = new int[n];
-		String strArray[] = new String[n];
+		
+		StringBuilder[] sbArray = new StringBuilder[201];
+		
+		for(int i = 0; i < sbArray.length; i++) {
+			sbArray[i] = new StringBuilder();
+		}
 		
 		for(int i = 0; i < n; i++) {
-			st = new StringTokenizer(br.readLine(), " ");
+			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+			int age = Integer.parseInt(st.nextToken());
+			String name = st.nextToken();
 			
-			numArray[i] = Integer.parseInt(st.nextToken());
-			strArray[i] = st.nextToken();
+			sbArray[age].append(age).append(' ').append(name).append("\n");
 		}
 		
-		int numTemp = 0;
-		String strTemp = "";
-		for(int i = 0; i < n; i++) {
-			for(int j = n - 1; j > i; j--) {
-				if(numArray[j] < numArray[j - 1]) {
-					numTemp = numArray[j-1];
-					numArray[j-1] = numArray[j];
-					numArray[j] = numTemp;
-					
-					strTemp = strArray[j-1];
-					strArray[j-1] = strArray[j];
-					strArray[j] = strTemp;
-				}				
-			}
+		StringBuilder sb = new StringBuilder();
+		for(StringBuilder val : sbArray) {
+			sb.append(val);
 		}
 		
-		for(int i = 0; i < n; i++) {
-			System.out.println(numArray[i] + " " + strArray[i]);
-		}
+		System.out.print(sb);
+		br.close();
 	}
 }

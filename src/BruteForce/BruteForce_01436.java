@@ -9,10 +9,14 @@ public class BruteForce_01436 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int n = Integer.parseInt(br.readLine());
-		int count = 0;
+		int count = 1;
 		
-		for(int i = 0; i < 2147483647; i++) {
-			
+		int shom = 666;
+		while(count != n) {
+			shom++;
+			if(String.valueOf(shom).contains("666")) count++;
 		}
+		System.out.println(shom);
+		br.close();
 	}
 }

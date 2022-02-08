@@ -7,17 +7,26 @@ import java.io.BufferedReader;
 public class Implementation_02775 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(br.readLine());
 		
 		for(int i = 0; i < n; i++){
-			int x = Integer.parseInt(br.readLine());
-			int y = Integer.parseInt(br.readLine());
+			int k = Integer.parseInt(br.readLine());
+			int m = Integer.parseInt(br.readLine());
+						
+			int array[][] = new int[k+1][m+1];
 			
-			sb.append(x).append("\n");
-			sb.append(y).append("\n");
+			for(int j = 0; j < k + 1; j++) array[j][0] = 1;
+			for(int j = 0; j < m + 1; j++) array[0][j] = j + 1;
+			
+			for(int row = 1; row < k + 1; row++) {
+				for(int col = 1; col < m + 1; col++) {
+					array[row][col] = array[row-1][col] + array[row][col-1];
+				}
+			}
+			
+			System.out.println(array[k][m-1]);
 		}
-		System.out.print(sb);
+		br.close();
 	}
 }

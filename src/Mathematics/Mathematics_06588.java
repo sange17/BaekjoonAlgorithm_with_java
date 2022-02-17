@@ -8,42 +8,38 @@ public class Mathematics_06588 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		int a = 0;
-		int b = 0;
+		boolean[] isPrime = new boolean[1000001];
+		
+		for(int i = 2; i <= 1000000; i++) {
+			isPrime[i] = true;
+		}
+		
+		for(int i = 2; i <= Math.sqrt(1000000); i++) {
+			for(int j = i * i; j <= 1000000; j += i) {
+				if(!isPrime[j]) continue;
+				isPrime[j] = false;
+			}
+		}
 		
 		while(true) {
 			int n = Integer.parseInt(br.readLine());
-			int array[] = new int[n];
+			boolean isPrimeCheck = false;
 			
-			if(br.readLine() == "0") break;
+			if(n == 0) {
+				System.out.println(sb);
+				br.close();
+				break;
+			}
 			
-			for(int i = 3; i < n; i++) {
-				boolean isPrime = true;
-				
-//				for(int j = 0; j <= Math.sqrt(i); j++) {
-//					if(j == 1 || j == 2) {
-//						break;
-//					}
-//					if(i % j == 0) {
-//						isPrime = false;
-//						break;
-//					}
-//				}
-				
-				if(isPrime) {
-					System.out.println("¾ß");
-					array[i-3] = i;
-				}else {
-					isPrime = true;
-					continue;
+			for(int i = 2; i <= n / 2; i++) {
+				if(isPrime[i] && isPrime[n-i]) {
+					sb.append(n + " = "+ i + " + " + (n - i)).append("\n");
+					isPrimeCheck = true;
+					break;
 				}
 			}
 			
-			for(int i = 0; i < n; i++) {
-				System.out.println(array[i]);
-			}
-			
-//			System.out.println(n + " = " a + " + " b);
+			if(!isPrimeCheck) sb.append("Goldbach's conjecture is wrong.").append("\n");
 		}
 	}
 }

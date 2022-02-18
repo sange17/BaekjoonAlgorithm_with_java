@@ -28,7 +28,6 @@ public class DataStructure_12605 {
 			}
 			sb.append("\n");
 		}
-		
 		System.out.println(sb);
 		br.close();
 	}

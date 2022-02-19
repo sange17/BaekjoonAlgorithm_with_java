@@ -17,8 +17,6 @@ public class DynamicProgramming_01309 {
 			dpArray[i][0] = (dpArray[i-1][0] + dpArray[i-1][1] + dpArray[i-1][2]) % 9901;
 			dpArray[i][1] = (dpArray[i-1][0] + dpArray[i-1][2]) % 9901;
 			dpArray[i][2] = (dpArray[i-1][0] + dpArray[i-1][1]) % 9901;
-			
-			System.out.println(dpArray[i][0] + " " + dpArray[i][1] + " " + dpArray[i][2]);
 		}
 		
 		long answer = (dpArray[T][0] + dpArray[T][1] + dpArray[T][2]) % 9901;

@@ -10,7 +10,10 @@ public class DynamicProgramming_01463 {
 		int n = Integer.parseInt(br.readLine());
 		int count = 0;
 		
-		
+		while(n >= 5) {
+			count += n / 5;
+			n /= 5;
+		}
 		
 		System.out.println(count);
 		br.close();

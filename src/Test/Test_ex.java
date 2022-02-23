@@ -160,20 +160,22 @@ public class Test_ex {
 // J¹ø
 package Test;
 
-import java.io.InputStreamReader;
 import java.io.IOException;
-import java.io.BufferedReader;
-import java.util.StringTokenizer;
 
 public class Test_ex {
 	public static void main(String[] args) throws IOException{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		double T = 1;
 		
-		int n = Integer.parseInt(br.readLine());
+		int i = 0;
+		while(i != 100) {
+			T /= 2;
+			
+			
+			
+			i++;
+		}
 		
-		boolean[] array = new boolean[n * 2];
-		
-		
+		System.out.printf("%.222f",T);
 	}
 }
 

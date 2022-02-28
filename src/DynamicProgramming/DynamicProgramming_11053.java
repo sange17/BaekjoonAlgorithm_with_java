@@ -10,19 +10,31 @@ public class DynamicProgramming_11053 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
 		int n = Integer.parseInt(br.readLine());
-		int count = 0;
-		int max = 0;
+		int[] array = new int[n+1];
+		int[] dpArray = new int[n+1];
 		
 		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-		for(int i = 0; i < n; i++) {
-			int num = Integer.parseInt(st.nextToken());
-			if(num > max)
-			{
-				max = num;
-				count++;
+		for(int i = 1; i <= n; i++) {
+			array[i] = Integer.parseInt(st.nextToken());
+		}
+		
+		dpArray[1] = 1;
+		for(int i = 2; i <= n; i++) {
+			dpArray[i] = 1;
+			for(int j = 1; j < i; j++) {
+				if(array[i] > array[j]) {
+					dpArray[i] = Math.max(dpArray[j] + 1, dpArray[i]);
+				}
 			}
 		}
-		System.out.println(count);
+		
+		int max = 0;
+		for(int i = 1; i <= n; i++) {
+			if(max < dpArray[i]) {
+				max = dpArray[i];
+			}
+		}
+		System.out.println(max);
 		br.close();
 	}
 }

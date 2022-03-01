@@ -11,15 +11,21 @@ public class DynamicProgramming_14916 {
 		int n = Integer.parseInt(br.readLine());
 		int count = 0;
 		
-		while(true) {
-			if(n % 5 == 0) {
-				count = n / 5;
-				System.out.println(count);
+		while(n % 5 != 0) {
+			n -= 2;
+			count++;
+			
+			if(n <= -1) {
+				count = -1;
 				break;
-			}else {
-				n -= 2;
-				
-			}			
+			}
 		}
+		
+		if(count > -1) {
+			count += (n / 5);
+		}
+		
+		System.out.println(count);
+		br.close();
 	}
 }

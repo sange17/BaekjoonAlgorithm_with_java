@@ -64,7 +64,7 @@ public class Graphs_01012 {
 			if(searchRow >= 0 && searchColumn >= 0 && searchRow < M && searchColumn < N) {
 				if(array[searchRow][searchColumn] == 1 && !visited[searchRow][searchColumn]) {
 					dfs(searchRow, searchColumn);
-				}				
+				}
 			}
 		}
 	}

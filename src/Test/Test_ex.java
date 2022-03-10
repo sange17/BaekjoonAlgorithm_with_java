@@ -160,22 +160,25 @@ public class Test_ex {
 // J¹ø
 package Test;
 
+import java.math.BigInteger;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class Test_ex {
-	public static void main(String[] args) throws IOException{
-		double T = 1;
-		
-		int i = 0;
-		while(i != 100) {
-			T /= 2;
-			
-			
-			
-			i++;
-		}
-		
-		System.out.printf("%.222f",T);
-	}
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        
+        String strA = st.nextToken();
+        String strB = st.nextToken();
+        
+        BigInteger a = new BigInteger(strA);
+        BigInteger b = new BigInteger(strB);
+        
+        System.out.println(a.add(b));
+        br.close();
+    }
 }
-

@@ -160,25 +160,19 @@ public class Test_ex {
 // J¹ø
 package Test;
 
-import java.math.BigInteger;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
+import java.math.BigInteger;
 
 public class Test_ex {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        BigInteger N = new BigInteger(br.readLine());
+        BigInteger div = new BigInteger("20000303");
         
-        String strA = st.nextToken();
-        String strB = st.nextToken();
-        
-        BigInteger a = new BigInteger(strA);
-        BigInteger b = new BigInteger(strB);
-        
-        System.out.println(a.add(b));
+        System.out.println(N.remainder(div));
         br.close();
     }
 }

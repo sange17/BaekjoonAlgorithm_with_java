@@ -160,19 +160,16 @@ public class Test_ex {
 // J¹ø
 package Test;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
-import java.math.BigInteger;
+import java.util.Scanner;
 
-public class Test_ex {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+public class Test_ex{
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
         
-        BigInteger N = new BigInteger(br.readLine());
-        BigInteger div = new BigInteger("20000303");
+        long n = sc.nextInt();
         
-        System.out.println(N.remainder(div));
-        br.close();
+        System.out.println(n * 4);
     }
 }
+
+// Test_ex

@@ -9,12 +9,12 @@ public class DynamicProgramming_24417 {
 	static long[] dpArray;
 	static int count_R = 0;
 	static int count_D = 0;
-	static int div = 1000000007;
+	static int mod = 1000000007;
 	
 	public static int fib_R(int a) {
 		if(a == 1 || a == 2) {
 			count_R++;
-			count_R %= div;
+			count_R %= mod;
 			return 1;
 		}else {
 			return (fib_R(a-1) + fib_R(a-2));			
@@ -27,7 +27,7 @@ public class DynamicProgramming_24417 {
 		dpArray[1] = dpArray[2] = 1;
 		for(int i = 3; i <= b; i++) {
 			count_D++;
-			count_D %= div;
+			count_D %= mod;
 			dpArray[i] = dpArray[i-1] + dpArray[i-2];
 		}
 		

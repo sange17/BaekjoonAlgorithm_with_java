@@ -7,42 +7,39 @@ import java.math.BigInteger;
 import java.util.StringTokenizer;
 
 public class DynamicProgramming_06571 {
-	static BigInteger zero = new BigInteger("0");
-	static BigInteger one = new BigInteger("1");
-	static BigInteger two = new BigInteger("2");
-	
-	public static int fib(BigInteger n) {
-		if(n.compareTo(one) == 0) {
-			return 1;
-		}
-		if(n.compareTo(two) == 0) {
-			return 1;
-		}
-		return fib(n.subtract(one)) + fib(n.subtract(two));
-	}
-	
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
+		BigInteger[] array = new BigInteger[10000];
+		int count = 0;
+		
+		array[1] = BigInteger.ONE;
+		array[2] = BigInteger.ONE;
 		
 		while(true) {
 			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
-			StringBuilder sb = new StringBuilder();
 			
 			BigInteger a = new BigInteger(st.nextToken());
 			BigInteger b = new BigInteger(st.nextToken());
 			
-			if(a.compareTo(zero) == 0 && b.compareTo(zero) == 0) {
-				
-				break;
+			if(a.compareTo(BigInteger.ZERO) == 0 && b.compareTo(BigInteger.ZERO) == 0) break;
+			
+			
+			for(int i = 3; i <= b.intValue(); i++) {
+				array[i] = array[i-1].add(array[i-2]);
+				System.out.println(array[i] + " " + i);
 			}
 			
-			int count = 0;
-			while(true) {
-				if((a.compareTo(a) == 1 || a.compareTo(a) == 0) && (b.compareTo(b) == -1 || b.compareTo(b) == 0)) {
+			for(int i = 1; i <= array.length; i++) {
+				if(array[i].compareTo(a) >= 0 && array[i].compareTo(b) <= 0) {
 					count++;
 				}
 			}
 			
+			sb.append(count).append("\n");
 		}
+		
+		System.out.println(sb);
+		br.close();
 	}
 }

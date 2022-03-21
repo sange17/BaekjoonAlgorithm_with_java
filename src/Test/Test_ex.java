@@ -157,19 +157,61 @@ public class Test_ex {
 //}
 //
 
-// J번
+// 2022 연세대학교 신학기맞이 프로그래밍 경진대회 Open Contest
+// B번
+//package Test;
+//
+//import java.io.InputStreamReader;
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.util.StringTokenizer;
+//
+//public class Test_ex{
+//    public static void main(String[] args) throws IOException{
+//        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        StringBuilder sb = new StringBuilder();
+//        
+//        int T = Integer.parseInt(br.readLine());
+//        int N, A, B, size, weight;
+//        boolean check = false;
+//        
+//        StringTokenizer st;
+//        
+//        for(int i = 1; i <= T; i++) {
+//        	sb.append("Material Management ").append(i).append("\n");
+//        	
+//        	N = Integer.parseInt(br.readLine());
+//        	
+//        	st = new StringTokenizer(br.readLine(), " ");
+//        	
+//        	A = Integer.parseInt(st.nextToken());
+//        	B = Integer.parseInt(st.nextToken());
+//        	
+//        	for(int j = 0; j < N; j++) {
+//        		st = new StringTokenizer(br.readLine(), " ");
+//        		
+//        		size = Integer.parseInt(st.nextToken());
+//        		weight = Integer.parseInt(st.nextToken());
+//        		
+//        		if(size > A || weight > B) {
+//        			check = true;
+//        		}else {
+//        			continue;
+//        		}
+//        	}
+//        	
+//        	if(check != true) {
+//        		sb.append("Classification ---- End!").append("\n");
+//        	}
+//        }
+//        
+//        System.out.println(sb);
+//        br.close();
+//    }
+//}
+
 package Test;
 
-import java.util.Scanner;
 
-public class Test_ex{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        
-        long n = sc.nextInt();
-        
-        System.out.println(n * 4);
-    }
-}
 
 // Test_ex

@@ -11,12 +11,6 @@ public class Mathematics_01373 {
 		
 		String str = br.readLine();
 		
-		if(str.length() % 3 == 1) {
-			sb.append("00").append(str);
-			System.out.println(sb);
-		}else if(str.length() % 3 == 2) {
-			sb.append("0").append(str);
-			System.out.println(sb);
-		}
+		
 	}
 }

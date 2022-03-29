@@ -13,22 +13,22 @@ public class Mathematics_11659 {
 		
 		int N = Integer.parseInt(st.nextToken());
 		int M = Integer.parseInt(st.nextToken());
-		int[] array = new int[N];
+		int[] array = new int[N+1];
 		int sum = 0;
 		
+		array[0] = 0;
 		st = new StringTokenizer(br.readLine(), " ");
-		for(int i = 0; i < N; i++) {
-			array[i] = Integer.parseInt(st.nextToken());
+		for(int i = 1; i <= N; i++) {
+			array[i] = array[i-1] + Integer.parseInt(st.nextToken());
 		}
 		
-		for(int i = 0; i < M; i++) {
+		for(int i = 1; i <= M; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
 			int a = Integer.parseInt(st.nextToken());
 			int b = Integer.parseInt(st.nextToken());
 			
-			for(int j = a - 1; j < b; j++) {
-				sum += array[j];
-			}
+			sum = array[b] - array[a-1];
+			
 			sb.append(sum).append("\n");
 			sum = 0;
 		}

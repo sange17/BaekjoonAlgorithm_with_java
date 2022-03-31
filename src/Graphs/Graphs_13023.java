@@ -10,6 +10,7 @@ public class Graphs_13023 {
 	static boolean[] visited;
 	static int N;
 	static int M;
+	static int count;
 	
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,7 +20,7 @@ public class Graphs_13023 {
 		M = Integer.parseInt(st.nextToken());
 		array = new int[N + 1][N + 1];
 		visited = new boolean[N + 1];
-		int count = 0;
+		count = 0;
 		
 		for(int i = 0; i < M; i++) {
 			st = new StringTokenizer(br.readLine(), " ");
@@ -30,14 +31,13 @@ public class Graphs_13023 {
 			array[a][b] = array[b][a] = 1;
 		}
 		
-		for(int i = 1; i < N + 1; i++) {
+		for(int i = 1; i <= N; i++) {
 			if(!visited[i]) {
 				dfs(i);
-				count++;
 			}
 		}
 
-		if(count == 1) {
+		if(count > 0) {
 			System.out.println(1);			
 		}
 		else {
@@ -55,5 +55,6 @@ public class Graphs_13023 {
 				dfs(i);
 			}
 		}
+		count++;
 	}
 }

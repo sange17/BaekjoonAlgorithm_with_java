@@ -210,8 +210,68 @@ public class Test_ex {
 //    }
 //}
 
+// 22 ±¸µ¥±â ÄÅ 2
+//import java.util.Scanner;
+//
+//public class Main{
+//    public static void main(String[] args){
+//        Scanner sc = new Scanner(System.in);
+//        StringBuilder sb = new StringBuilder();
+//        
+//        int n = sc.nextInt();
+//        String[] array = {"0", "1", "10", "11", "100", "101", "110", "111", "1000", "1001"};
+//        
+//        for(int i = 0; i <= n; i++){
+//            sb.append(array[i]);
+//        }
+//        
+//        System.out.println(sb);
+//    }
+//}
 package Test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Test_ex{
+  public static void main(String[] args) throws IOException {
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      StringBuilder sb = new StringBuilder();
+      
+      String[] array = new String[16963];
+      
+      for(int i = 0; i < 16963; i++) {
+    	  array[i] = br.readLine();
+      }
+      
+      for(int i = 0; i < 16963; i++) {
+    	  if(array[i].contains("ASH")) {
+    		  if(array[i].contains("C")
+    			||array[i].contains("E")
+    			||array[i].contains("F")
+    			||array[i].contains("I")
+    			||array[i].contains("K")
+    			||array[i].contains("L")
+    			||array[i].contains("O")
+    			||array[i].contains("R")
+    			||array[i].contains("T")
+    			||array[i].contains("V")
+    			||array[i].contains("W")
+    			||array[i].contains("G")
+    			||array[i].contains("N")) {
+    			  continue;
+    		  }
+    		  if(array[i].indexOf("A") == 2) {
+    			  sb.append(array[i]).append("\n");
+    		  }
+    	  }
+      }
+      
+      System.out.println(sb);
+      br.close();
+  }
+}
 
 
 // Test_ex

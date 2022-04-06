@@ -246,23 +246,21 @@ public class Test_ex{
       }
       
       for(int i = 0; i < 16963; i++) {
-    	  if(array[i].contains("ASH")) {
-    		  if(array[i].contains("C")
+    	  if(array[i].contains("CO")) {
+    		  if(array[i].contains("W")
     			||array[i].contains("E")
-    			||array[i].contains("F")
-    			||array[i].contains("I")
-    			||array[i].contains("K")
-    			||array[i].contains("L")
-    			||array[i].contains("O")
     			||array[i].contains("R")
     			||array[i].contains("T")
-    			||array[i].contains("V")
-    			||array[i].contains("W")
+    			||array[i].contains("U")
+    			||array[i].contains("Y")
+    			||array[i].contains("S")
     			||array[i].contains("G")
-    			||array[i].contains("N")) {
+    			||array[i].contains("H")
+    			||array[i].contains("N")
+    			||array[i].contains("L")) {
     			  continue;
     		  }
-    		  if(array[i].indexOf("A") == 2) {
+    		  if(array[i].indexOf("C") == 0 && array[i].indexOf("O") == 1 && array[i].indexOf("A") == 4) {
     			  sb.append(array[i]).append("\n");
     		  }
     	  }

@@ -27,6 +27,11 @@ public class Graphs_07576 {
 			}
 		}
 		
-		
+		for(int i = 0; i < N; i++) {
+			for(int j = 0; j < M; j++) {
+				System.out.print(array[i][j]);
+			}
+			System.out.println();
+		}
 	}
 }

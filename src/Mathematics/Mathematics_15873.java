@@ -1,22 +1,35 @@
 package Mathematics;
 
-import java.math.BigInteger;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Mathematics_15873 {
-	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		String str = sc.nextLine();
-		int a = 0;
-		int b = 0;
+		int num = Integer.parseInt(br.readLine());
+		int sum = 0;
 		
-		if(str.length() == 2) {
-			a = str.charAt(0) - 48;
-			b = str.charAt(1) - 48;
-			System.out.println(a + b);
-		}else if(str.length() == 3) {
-			
+		if(num < 100) {
+			sum += num / 10;
+			sum += num % 10;
+			System.out.println(sum);
+		}else if(num % 100 == 10) {
+			sum += num / 100;
+			sum += num % 100;
+			System.out.println(sum);
+		}else if(num / 100 == 1 && num % 100 < 10) {
+			sum += num / 10;
+			sum += num % 10;
+			System.out.println(sum);
+		}else if(num % 1000 == 10 && num / 1000 == 1) {
+			sum += num / 100;
+			sum += num % 1000;
+			System.out.println(sum);
 		}
+		
+		br.close();
+		
 	}
 }

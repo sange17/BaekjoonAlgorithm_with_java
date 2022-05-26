@@ -1,8 +1,8 @@
 package DynamicProgramming;
 
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.BufferedReader;
 
 public class DynamicProgramming_01699 {
 	public static void main(String[] args) throws IOException{

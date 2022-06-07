@@ -6,19 +6,16 @@ public class Geometry_17177 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int BC = sc.nextInt();
-		int AB = sc.nextInt();
-		int CD = sc.nextInt();
+		int a = sc.nextInt();
+		int b = sc.nextInt();
+		int c = sc.nextInt();
 		
-		double AC = Math.sqrt(Math.pow(BC, 2) - Math.pow(AB, 2));
-		double BD = Math.sqrt(Math.pow(BC, 2) - Math.pow(CD, 2));
+		int r1 = a * a - b * b;
+		int r2 = a * a - c * c;
+		double d = (Math.sqrt(r1 * r2) - b * c) / a;
 		
-		double AD = ((AC * BD - AB * CD) / BC);
+		System.out.println(d > 0 ? (int) d : -1);
 		
-		if(AD <= 0) {
-			System.out.println(-1);
-		}else {
-			System.out.println((int)Math.ceil(AD));
-		}
+		sc.close();
 	}
 }

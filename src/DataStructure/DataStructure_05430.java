@@ -3,53 +3,65 @@ package DataStructure;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
 
 public class DataStructure_05430 {
+	
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+				
+		int T = Integer.parseInt(br.readLine());
+		ArrayDeque<Integer> deque = new ArrayDeque<>();
 		
-		int n = Integer.parseInt(br.readLine());
-		
-		for(int i = 0; i < n; i++) {
-			StringBuilder sb = new StringBuilder();
-			String[] pArray = br.readLine().split("");
+		for(int i = 0; i < T; i++) {
+			String p = br.readLine();
 			
-			int m = Integer.parseInt(br.readLine());
+			int n = Integer.parseInt(br.readLine());
 			
 			String str = br.readLine();
-			String[] xArray = new String[m];
-			str = str.replace("[", "");
-			str = str.replace("]", "");
 			
-			sb.append("[");
-			int count = 0;
-			if(m < 2) {
-				for(int j = 0; j < pArray.length; j++) {
-					if(pArray[j] == "D") {
-						count += 1;
-					}
-				}
+			if(n != 0) {
+				str = str.replace("[", "");
+				str = str.replace("]", "");
+				String[] xArray = str.split(",");
 				
-				System.out.println(count);
-				
-				if(count < 1) {
-					
-				}else if(count == 1 && m == 1) {
-					sb.append("[]").append("\n");
-				}else{
-					System.out.println("error");
-				}
-				
-			}else {	
-				xArray = str.split(",");
-				
-				for(int j = 0; j < m; j++) {
-//					System.out.println(xArray.length);
+				for(String string : xArray) {
+					deque.add(Integer.parseInt(string));
 				}
 			}
-			sb.append("]");
-			System.out.println(sb);
+			
+			System.out.println(ac(deque, p));
+		}
+	}
+
+	private static String ac(ArrayDeque<Integer> deque, String operation) {
+		boolean reverse = false;
+				
+		for(char pChar : operation.toCharArray()) {
+			if(pChar == 'R')
+				reverse = !reverse;
+			else {
+				if(deque.size() == 0)
+					return "error";
+				
+				if(reverse)
+					deque.removeLast();
+				else 
+					deque.removeFirst();
+			}
 		}
 		
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		while(!deque.isEmpty()) {
+			sb.append(reverse ? deque.removeLast() : deque.removeFirst());
+						
+			if(deque.size() != 0)
+				sb.append(",");
+			
+		}
+		sb.append("]");
+		
+		return sb.toString();
 	}
 }

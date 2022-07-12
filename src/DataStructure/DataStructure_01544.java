@@ -24,10 +24,7 @@ public class DataStructure_01544 {
 			for(int j = 0; j < word.length(); j++) {
 				wordList[i].add(word.substring(j) + word.substring(0, j));
 			}
-			
-			
-			System.out.println(wordList[i]);
-			
+						
 			boolean check = true;
 			for(int j = 0; check && j <= i - 1; j++) {
 				for(int k = 0; check && k < wordList[j].size(); k++) {
@@ -35,9 +32,9 @@ public class DataStructure_01544 {
 						check = false;
 				}
 			}
+			
 			if(check)
 				resultWordCount++;
-				
 		}
 		
 		System.out.println(resultWordCount);

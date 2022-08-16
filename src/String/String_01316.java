@@ -34,5 +34,6 @@ public class String_01316 {
 		}
 		
 		System.out.println(count);
+		br.close();
 	}
 }

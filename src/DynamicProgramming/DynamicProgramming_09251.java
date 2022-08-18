@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 public class DynamicProgramming_09251 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringBuilder sb = new StringBuilder();
 		
 		String string1 = br.readLine();
 		String string2 = br.readLine();

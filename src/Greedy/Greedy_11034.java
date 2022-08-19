@@ -1,34 +1,58 @@
 package Greedy;
 
+import java.util.Scanner;
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.IOException;
 import java.util.StringTokenizer;
 
 public class Greedy_11034 {
 	public static void main(String[] args) throws IOException{
+		
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringBuilder sb = new StringBuilder();
-		
-		int A = 0;
-		int B = 0;
-		int C = 0;
 		String str;
 		
-		StringTokenizer st;
-		while((str = br.readLine()).length() != 0) {
-			
-				st = new StringTokenizer(str, " ");
+		try {
+			while((str = br.readLine()) != null) {
+
+				StringTokenizer st = new StringTokenizer(str, " ");
 				
-				A = Integer.parseInt(st.nextToken());
-				B = Integer.parseInt(st.nextToken());
-				C = Integer.parseInt(st.nextToken());
-							
-				sb.append(Math.max(B-A, C-B) - 1).append("\n");
-			
+				int A = Integer.parseInt(st.nextToken());
+				int B = Integer.parseInt(st.nextToken());
+				int C = Integer.parseInt(st.nextToken());
+				int jump = 0;
+				
+				if(B - A == 1 && C - B == 1) {
+					sb.append(jump + "\n");
+					continue;
+				}
+				
+				if(B - A < C - B) {
+					jump = C - B - 1;
+					sb.append(jump + "\n");
+					continue;
+				}
+				
+				if(B - A > C - B) {
+					jump = B - A - 1;
+					sb.append(jump + "\n");
+					continue;
+				}
+				
+				if(B - A == C - B) {
+					jump = C - B - 1;
+					sb.append(jump + "\n");
+					continue;
+				}
+				System.out.println(sb.toString());
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 		
-		System.out.println(sb);
+		System.out.println(sb.toString());
 		br.close();
+		
 	}
 }

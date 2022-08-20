@@ -3,6 +3,8 @@ package DataStructure;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class DataStructure_18258 {
 	public static void main(String[] args) throws IOException{
@@ -10,47 +12,54 @@ public class DataStructure_18258 {
 		StringBuilder sb = new StringBuilder();
 		
 		int n = Integer.parseInt(br.readLine());
-		int que[] = new int[n];
-		int front = 0;
-		int rear = 0;
-		int size = 0;
+		int queueLast = 0;
+		
+		Queue<Integer> queue = new LinkedList<>();
 		
 		for(int i = 0; i < n; i++) {
 			String str[] = br.readLine().split(" ");
-			switch(str[0]) {
+			String operation = str[0];
+			
+			switch(operation) {
 			case "push":
-				rear++;
-				que[rear] = Integer.parseInt(str[1]);
-				size++;
+				queueLast = Integer.parseInt(str[1]);
+				queue.add(queueLast);
 				break;
 			case "pop":
-				if(size == 0) sb.append(-1 + "\n");
-				else {
-					front++;
-					sb.append(que[front] + "\n");
-					que[front] = 0;
-					size--;
+				if(queue.size() == 0) {
+					sb.append(-1 + "\n");
+				}else {
+					sb.append(queue.poll() + "\n");
 				}
 				break;
 			case "size":
-				sb.append(size + "\n");;
+				sb.append(queue.size() + "\n");
 				break;
 			case "empty":
-				if(size == 0) sb.append(1 + "\n");
-				else sb.append(0 + "\n");
+				if(queue.size() == 0) {
+					sb.append(1 + "\n");
+				}else {
+					sb.append(0 + "\n");
+				}
 				break;
 			case "front":
-				if(size == 0) sb.append(-1 + "\n");
-				else sb.append(que[front+1] + "\n");
+				if(queue.size() == 0) {
+					sb.append(-1 + "\n");
+				}else {
+					sb.append(queue.peek() + "\n");
+				}
 				break;
 			case "back":
-				if(size == 0) sb.append(-1 + "\n");
-				else sb.append(que[rear] + "\n");
+				if(queue.size() == 0) {
+					sb.append(-1 + "\n");
+				}else {
+					sb.append(queueLast + "\n");
+				}
 				break;
 			}
 		}
 		
-		System.out.println(sb);
+		System.out.println(sb.toString());
 		br.close();
 	}
 }

@@ -11,7 +11,6 @@ public class Geometry_01485 {
 		
 		int T = Integer.parseInt(br.readLine());
 				
-		
 		StringTokenizer st;
 		for(int i = 0; i < T; i++) {
 			for(int j = 0; j < 4; j++) {

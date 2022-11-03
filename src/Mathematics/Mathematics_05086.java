@@ -23,11 +23,11 @@ public class Mathematics_05086 {
 			if(num1 == 0 && num2 == 0) break;
 			
 			if(num2 % num1 == 0) {		// 약수 판별
-				sb.append("factor");
+				sb.append("factor" + "\n");
 			}else if(num1 % num2 == 0) {	// 배수 판별
-				sb.append("multiple");
+				sb.append("multiple" + "\n");
 			}else {		// 둘 다 아님
-				sb.append("neither");
+				sb.append("neither" + "\n");
 			}
 		}
 		

@@ -11,57 +11,72 @@ public class DataStructure_01918 {
 		String str = sc.next();
 		int strLength = str.length();
 		
-		Stack<Character> operatorStack = new Stack<Character>();
+		Stack<Character> stack = new Stack<Character>();
 				
 		char character;
-		char top;
 		for(int i = 0; i < strLength; i++) {
 			
 			character = str.charAt(i);
 			
-			// character가 연산자 또는 괄호일 때
-			if(character == '+' || character == '-' || character == '*' || character == '/' || character == '(' || character == ')') {
+			if(character >= 65 && character <= 90) {
 				
-				// 스택이 비어있을 때는 먼저 push하기
-				if(operatorStack.isEmpty()) {
-					operatorStack.push(character);
+				sb.append(character);
+			}else {
+				
+				if(character == '+' || character == '-') {
 					
-				}else {
-					
-					// 스택의 top과 character 비교해서 
-					top = operatorStack.peek();
-					
-					if((top == '*' || top == '/') && (character == '+' || character == '-')) {
+					if(stack.isEmpty()) {
 						
-						sb.append(operatorStack.pop());
+						stack.push(character);
 					}else {
 						
-						operatorStack.push(character);
-					}
-					
-					if(character == ')') {
-						
-						operatorStack.pop();	// 닫힌 괄호 빼기
-						
-						while(operatorStack.peek() != '(') {
-							
-							sb.append(operatorStack.pop());
+						if(stack.peek() == '*' || stack.peek() == '/') {
+							sb.append(stack.pop());
+							stack.push(character);
+						}else {
+							stack.push(character);
 						}
-						
-						operatorStack.pop();	// 열린 괄호 빼기
-						continue;
 					}
-					
-//					while(!operatorStack.isEmpty()) {
-//						
-//						sb.append(operatorStack.pop());
-//					}
 				}
 				
-			}else {
-				// character가 연산자 또는 괄호일 때
-				sb.append(character);
-			}		
+				else if(character == '*' || character == '/') {
+					
+					if(stack.isEmpty()) {
+						
+						stack.push(character);
+					}else {
+						if(stack.peek() == '*' || stack.peek() == '/') {
+
+							sb.append(stack.pop());
+							stack.push(character);
+						}else {
+							
+							sb.append(character);
+							
+						}
+					}
+				}
+				
+				else if(character == '(') {
+					
+					stack.push(character);
+				}
+				
+				else if(character == ')') {
+					
+					while(stack.peek() != '(') {
+						
+						sb.append(stack.pop());
+					}
+					
+					stack.pop();
+				}
+			}
+		}
+		
+		while(!stack.isEmpty()) {
+			
+			sb.append(stack.pop());
 		}
 		
 		System.out.println(sb);

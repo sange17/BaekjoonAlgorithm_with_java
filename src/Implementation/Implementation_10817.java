@@ -3,23 +3,25 @@ package Implementation;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.StringTokenizer;
 
+// Arrays.sort는 DualPivotQuicksort 정렬방식을 사용하였고,
+// 평균: O(nlogn), 최악: O(n^2)의 시간 복잡도를 가진다.
 public class Implementation_10817 {
 	public static void main(String[] args) throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		
-		String array[] = new String[3];
+		int array[] = new int[3];
 		
-		array = br.readLine().split(" ");
-		
-		int a = Integer.parseInt(array[0]);
-		int b = Integer.parseInt(array[1]);
-		int c = Integer.parseInt(array[2]);
-		
-		if(a > b && a > c) {
-			
+		StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+		for(int i = 0; i < 3; i++) {
+			array[i] = Integer.parseInt(st.nextToken());
 		}
 		
+		Arrays.sort(array);
+		
+		System.out.println(array[1]);
 		br.close();
 	}
 }

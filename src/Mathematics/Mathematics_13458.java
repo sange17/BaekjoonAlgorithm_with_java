@@ -31,7 +31,7 @@ public class Mathematics_13458 {
 			if(num > B) {
 				num -= B;
 				count++;
-								
+				
 				if(num % C != 0) {
 					count += (num / C) + 1;
 				}else {

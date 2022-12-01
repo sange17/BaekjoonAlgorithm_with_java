@@ -3,6 +3,8 @@ package Mathematics;
 import java.util.Scanner;
 
 // 쉬운 문제라도 문제를 잘 읽어야된다...
+// 10^60이므로 입력을 숫자가 아닌 문자열로 받아야 한다.
+// 일의 자리 숫자만 2로 나누어 판단한다.
 public class Mathematics_05988 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);

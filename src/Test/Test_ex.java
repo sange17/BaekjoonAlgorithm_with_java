@@ -2,7 +2,7 @@
 2022 ICPC Sinchon Winter Algorithm Camp Contest Open
 
 
- A¹ø ¹®Á¦
+ Aï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 package Test;
 
 import java.io.InputStreamReader;
@@ -47,7 +47,7 @@ public class Test_ex {
 	}
 }
 
- B¹ø ¹®Á¦
+ Bï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 package Test;
 
 import java.io.InputStreamReader;
@@ -95,7 +95,7 @@ public class Test_ex {
 						idx = j + 1;
 						max = array[j+1][i];
 					}
-					// Á¡¼ö°¡ 0ÀÏ ¶§ Ã³¸®ÇØ¾ßÇÔ
+					// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ ï¿½ï¿½ Ã³ï¿½ï¿½ï¿½Ø¾ï¿½ï¿½ï¿½
 				}
 			}
 			
@@ -110,8 +110,8 @@ public class Test_ex {
 }
 */
 
-// Á¦1È¸ ºí·ÓÄÅ
-// B¹ø
+// ï¿½ï¿½1È¸ ï¿½ï¿½ï¿½ï¿½ï¿½
+// Bï¿½ï¿½
 //package Test;
 //
 //import java.io.InputStreamReader;
@@ -157,8 +157,8 @@ public class Test_ex {
 //}
 //
 
-// 2022 ¿¬¼¼´ëÇÐ±³ ½ÅÇÐ±â¸ÂÀÌ ÇÁ·Î±×·¡¹Ö °æÁø´ëÈ¸ Open Contest
-// B¹ø
+// 2022 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ ï¿½ï¿½ï¿½Ð±ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î±×·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¸ Open Contest
+// Bï¿½ï¿½
 //package Test;
 //
 //import java.io.InputStreamReader;
@@ -210,7 +210,7 @@ public class Test_ex {
 //    }
 //}
 
-// 22 ±¸µ¥±â ÄÅ 2
+// 22 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 2
 //import java.util.Scanner;
 //
 //public class Main{
@@ -228,48 +228,49 @@ public class Test_ex {
 //        System.out.println(sb);
 //    }
 //}
-package Test;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
-public class Test_ex{
-  public static void main(String[] args) throws IOException {
-      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-      StringBuilder sb = new StringBuilder();
-      
-      String[] array = new String[16963];
-      
-      for(int i = 0; i < 16963; i++) {
-    	  array[i] = br.readLine();
-      }
-      
-      for(int i = 0; i < 16963; i++) {
-    	  if(array[i].contains("CO")) {
-    		  if(array[i].contains("W")
-    			||array[i].contains("E")
-    			||array[i].contains("R")
-    			||array[i].contains("T")
-    			||array[i].contains("U")
-    			||array[i].contains("Y")
-    			||array[i].contains("S")
-    			||array[i].contains("G")
-    			||array[i].contains("H")
-    			||array[i].contains("N")
-    			||array[i].contains("L")) {
-    			  continue;
-    		  }
-    		  if(array[i].indexOf("C") == 0 && array[i].indexOf("O") == 1 && array[i].indexOf("A") == 4) {
-    			  sb.append(array[i]).append("\n");
-    		  }
-    	  }
-      }
-      
-      System.out.println(sb);
-      br.close();
-  }
-}
+//
+//package Test;
+//
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//
+//public class Test_ex{
+//  public static void main(String[] args) throws IOException {
+//      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//      StringBuilder sb = new StringBuilder();
+//      
+//      String[] array = new String[16963];
+//      
+//      for(int i = 0; i < 16963; i++) {
+//    	  array[i] = br.readLine();
+//      }
+//      
+//      for(int i = 0; i < 16963; i++) {
+//    	  if(array[i].contains("CO")) {
+//    		  if(array[i].contains("W")
+//    			||array[i].contains("E")
+//    			||array[i].contains("R")
+//    			||array[i].contains("T")
+//    			||array[i].contains("U")
+//    			||array[i].contains("Y")
+//    			||array[i].contains("S")
+//    			||array[i].contains("G")
+//    			||array[i].contains("H")
+//    			||array[i].contains("N")
+//    			||array[i].contains("L")) {
+//    			  continue;
+//    		  }
+//    		  if(array[i].indexOf("C") == 0 && array[i].indexOf("O") == 1 && array[i].indexOf("A") == 4) {
+//    			  sb.append(array[i]).append("\n");
+//    		  }
+//    	  }
+//      }
+//      
+//      System.out.println(sb);
+//      br.close();
+//  }
+//}
 
 
 // Test_ex

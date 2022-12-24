@@ -22,8 +22,8 @@ public class Implementation_10988 {
 				break;
 			}
 			
-			left--;
-			right++;
+			left++;
+			right--;
 			
 			if(left > right) {
 				break;

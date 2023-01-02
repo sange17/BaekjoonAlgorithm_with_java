@@ -19,10 +19,8 @@ public class Mathematics_20332 {
 			
 			sum += Integer.parseInt(st.nextToken());
 		}
-		
-		System.out.println(sum % N);
-		
-		if((sum % N) != 0) {
+				
+		if((sum % 3) != 0) {
 			
 			System.out.println("no");
 		}else {

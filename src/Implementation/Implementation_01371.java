@@ -1,12 +1,10 @@
 package Implementation;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.io.IOException;
+import java.util.Scanner;
 
 public class Implementation_01371 {
-	public static void main(String[] args) throws IOException {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		StringBuilder sb = new StringBuilder();
 		
 		String str = "";
@@ -15,31 +13,29 @@ public class Implementation_01371 {
 		int max = 0;
 		int indexNum = 0;
 		
-		while(true) {
+		while(sc.hasNextLine()) {
 			
-			str = br.readLine();
+			str = sc.nextLine();
 			strLength = str.length();
 			
-			if(str.equals("") || str == null || str.isEmpty() || str.length() == 0) {
-				break;
-			}else {
-				for(int i = 0; i < strLength; i++) {
+			for(int i = 0; i < strLength; i++) {
+				
+				if(str.charAt(i) == ' ') {
+					continue;
+				}
+				
+				indexNum = str.charAt(i) - 97;
+				array[indexNum]++;
+				
+				if(max < array[indexNum]) {
 					
-					if(str.charAt(i) == ' ') {
-						continue;
-					}
-					
-					indexNum = str.charAt(i) - 97;
-					array[indexNum]++;
-					
-					if(max < array[indexNum]) {
-						
-						max = array[indexNum];
-					}
+					max = array[indexNum];
 				}
 			}
 		}
 		for(int i = 0; i < 26; i++) {
+			
+			if(max == 0) continue;
 			
 			if(array[i] == max) {
 				
@@ -48,6 +44,6 @@ public class Implementation_01371 {
 		}			
 		
 		System.out.println(sb);
-		br.close();
+		sc.close();
 	}
 }

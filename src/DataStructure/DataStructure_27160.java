@@ -28,35 +28,10 @@ public class DataStructure_27160 {
 			map.put(S, map.getOrDefault(S, 0) + X);
 		}
 		
-		String result = "";
-		if(map.containsKey("STRAWBERRY")){
-			
-			if(map.get("STRAWBERRY") == 5) {
-				result = "YES";
-			}else {
-				result = "NO";
-			}
-		}else if(map.containsKey("BANANA")) {
-			
-			if(map.get("BANANA") == 5) {
-				result = "YES";
-			}else {
-				result = "NO";
-			}
-		}else if(map.containsKey("LIME")) {
-			
-			if(map.get("LIME") == 5) {
-				result = "YES";
-			}else {
-				result = "NO";
-			}
-		}else if(map.containsKey("PLUM")){
-			
-			if(map.get("PLUM") == 5) {
-				result = "YES";
-			}else {
-				result = "NO";
-			}
+		if(map.containsValue(5)) {
+			System.out.println("YES");
+		}else {
+			System.out.println("NO");
 		}
 		
 		

@@ -2,23 +2,28 @@ package Implementation;
 
 import java.util.Scanner;
 
+// 문제를 잘 읽자...
 public class Implementation_06778 {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
+		StringBuilder sb = new StringBuilder();
 		
-		int antenna = sc.nextInt();
+		int antennas = sc.nextInt();
 		int eyes = sc.nextInt();
 		
-		if(antenna >= 3 && eyes <= 4) {
-			System.out.println("TroyMartian");
+		if(antennas >= 3 && eyes <= 4) {
+			sb.append("TroyMartian\n");
 		}
 		
-		if(antenna <= 6 && eyes >= 2) {
-			System.out.println("VladSaturnian");
+		if(antennas <= 6 && eyes >= 2) {
+			sb.append("VladSaturnian\n");
 		}
 		
-		if(antenna <= 2 && eyes >= 3) {
-			System.out.println("GraemeMercurian");
+		if(antennas <= 2 && eyes <= 3) {
+			sb.append("GraemeMercurian\n");
 		}
+		
+		System.out.println(sb);
+		sc.close();
 	}
 }

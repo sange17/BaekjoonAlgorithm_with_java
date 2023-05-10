@@ -1,5 +1,5 @@
 # BaekjoonAlgorithm with java
-Studying algorithm :fire:
+Studying algorithm with java :fire:
 
 ## 시간 복잡도
 - 시간 제한이 1초인 문제에 대한 예시
